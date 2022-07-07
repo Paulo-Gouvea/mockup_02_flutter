@@ -1,16 +1,5 @@
 # mockup_02_flutter
 
-A new Flutter project.
+Um projeto para estudar sobre o desenvolvimento de uma tela com o flutter.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img width="326" alt="image" src="https://user-images.githubusercontent.com/76439397/177831806-f5f96071-e929-47cf-ad03-a6ab8f0ca133.png">
