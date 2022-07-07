@@ -18,77 +18,150 @@ class HomePage extends StatelessWidget {
     final width = screenSize.width;
     final height = screenSize.height;
 
-    return Scaffold(
-      body: Container(
-        width: width,
-        height: height,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFFEE7462),
-              Color(0xFFE94976)
-            ]
-          )
-        ),
-        child: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: height * 0.06),
-              width: width,
-              child: const Align(
-                alignment: Alignment.centerLeft,
-                child: GoBackButton()
+    if(width <= 700) {
+      return Scaffold(
+        body: Container(
+          width: width,
+          height: height,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xFFEE7462),
+                Color(0xFFE94976)
+              ]
+            )
+          ),
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: height * 0.06),
+                width: width,
+                child: const Align(
+                  alignment: Alignment.centerLeft,
+                  child: GoBackButton()
+                ),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: height * 0.28),
-              child: const Logo(),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: height * 0.08),
-              child: const TermsAndPolicy()
-            ),
-            Container(
-              margin: EdgeInsets.only(top: height * 0.03),
-              child: Column(
+              Container(
+                margin: EdgeInsets.only(top: height * 0.28),
+                child: const Logo(),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: height * 0.08),
+                child: const TermsAndPolicy()
+              ),
+              Container(
+                margin: EdgeInsets.only(top: height * 0.03),
+                child: Column(
+                  children: [
+                    SignInButton(
+                      width: width,
+                      height: height,
+                      icon: appleIcon,
+                      title: 'SIGN IN WITH APPLE',
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: height * 0.01),
+                      child: SignInButton(
+                        width: width,
+                        height: height,
+                        icon: facebookIcon,
+                        title: 'SIGN IN WITH FACEBOOK',
+                      )
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: height * 0.01),
+                      child: SignInButton(
+                        width: width,
+                        height: height,
+                        icon: bubbleIcon,
+                        title: 'SIGN IN WITH PHONE NUMBER',
+                      )
+                    )
+                  ],
+                )
+              ),
+              Container(
+                margin: EdgeInsets.only(top: height * 0.01),
+                child: const TroubleSigningInButton()
+              )
+            ],
+          ),
+        )
+      );
+    } else {
+      return Scaffold(
+        body: Container(
+          width: width,
+          height: height,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xFFEE7462),
+                Color(0xFFE94976)
+              ]
+            )
+          ),
+          child: Stack(
+            children: [
+              Positioned(
+                left: width * 0.03,
+                top: height * 0.05,
+                child: const GoBackButton()
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  SignInButton(
-                    width: width,
-                    height: height,
-                    icon: appleIcon,
-                    title: 'SIGN IN WITH APPLE',
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const[
+                      Logo(),
+                      TermsAndPolicy(),
+                    ],
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: height * 0.01),
-                    child: SignInButton(
-                      width: width,
-                      height: height,
-                      icon: facebookIcon,
-                      title: 'SIGN IN WITH FACEBOOK',
-                    )
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: height * 0.01),
-                    child: SignInButton(
-                      width: width,
-                      height: height,
-                      icon: bubbleIcon,
-                      title: 'SIGN IN WITH PHONE NUMBER',
-                    )
+                    margin: EdgeInsets.only(top: height * 0.15),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SignInButton(
+                          width: width,
+                          height: height,
+                          icon: appleIcon,
+                          title: 'SIGN IN WITH APPLE',
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: height * 0.01),
+                          child: SignInButton(
+                            width: width,
+                            height: height,
+                            icon: facebookIcon,
+                            title: 'SIGN IN WITH FACEBOOK',
+                          )
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: height * 0.01),
+                          child: SignInButton(
+                            width: width,
+                            height: height,
+                            icon: bubbleIcon,
+                            title: 'SIGN IN WITH PHONE NUMBER',
+                          )
+                        ),
+                        const TroubleSigningInButton()
+                      ],
+                    ),
                   )
                 ],
-              )
-            ),
-            Container(
-              margin: EdgeInsets.only(top: height * 0.01),
-              child: const TroubleSigningInButton()
-            )
-          ],
-        ),
-      )
-    );
+              ),
+            ],
+          ),
+        )
+      );
+    }
   }
 
 }

@@ -20,6 +20,7 @@ class SignInButton extends StatelessWidget {
       onPressed: () {},
       style: TextButton.styleFrom(
         primary: const Color(0xFFE94976),
+        maximumSize: const Size(300, 55),
         fixedSize: Size(width * 0.85, height * 0.057),
         padding: const EdgeInsets.symmetric(horizontal: 15),
         side: const BorderSide(
